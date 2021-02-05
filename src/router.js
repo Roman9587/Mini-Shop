@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 import Home from '@/view/Home'
 import Shop from '@/view/Shop'
+import E404 from '@/view/E404'
 
 Vue.use(Router)
 
@@ -16,6 +17,10 @@ const routes = [
 {
   path: '/shop',
   component: Shop,
+},
+{
+  path: '*',
+  component: E404,
 },
 ]
 

@@ -1,5 +1,5 @@
 <template>
-  <v-app app>
+  <v-app app id='app'>
     <router-view />
   </v-app>
 </template>
@@ -8,5 +8,8 @@
 export default {}
 </script>
 
-<style>
+<style scoped>
+#app {
+  background: url(../assets/image/emptebg.jpg) 0 0 / cover;
+}
 </style>

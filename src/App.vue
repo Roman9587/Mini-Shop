@@ -1,5 +1,5 @@
 <template>
-  <component :is='"MainLaayout"' />
+  <component :is='"EmptyLayout"' />
 </template>
 
 <script>
