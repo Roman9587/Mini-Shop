@@ -2,8 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 
 import Home from '@/view/Home'
-import Page1 from '@/view/Page1'
-import Page2 from '@/view/Page2'
+import Shop from '@/view/Shop'
 
 Vue.use(Router)
 
@@ -15,16 +14,12 @@ const routes = [
 },
 
 {
-  path: '/page1',
-  component: Page1,
+  path: '/shop',
+  component: Shop,
 },
-
-{
-  path: '/page2',
-  component: Page2,
-},
-
 ]
+
+
 export default new Router({
   routes,
   mode: 'history',

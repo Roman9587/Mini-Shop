@@ -1,5 +1,5 @@
 <template>
   <div>
-    <h2>страница 1</h2>
+    <h2>магазин</h2>
   </div>
 </template>
