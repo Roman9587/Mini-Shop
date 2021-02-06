@@ -1,5 +1,5 @@
 <template>
-  <div>shop</div>
+  <div>LoGin</div>
 </template>
 
 <script>

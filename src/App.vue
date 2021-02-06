@@ -1,5 +1,5 @@
 <template>
-  <component :is='"EmptyLayout"' />
+  <component :is='"MainLaayout"' />
 </template>
 
 <script>
@@ -11,6 +11,12 @@ export default {
     MainLaayout,
     EmptyLayout,
   },
+  computed: {
+    layout() {
+      return (this.$route.meta.layout || 'empty') + 'EmptyLayout'
+    },
+  },
+  created() {},
 }
 </script>
 

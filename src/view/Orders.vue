@@ -1,6 +1,4 @@
-<template>
-  <div>shop</div>
-</template>
+<template></template>
 
 <script>
 export default {}
