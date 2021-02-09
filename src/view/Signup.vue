@@ -1,5 +1,5 @@
 <template>
-  <v-form @submit.prevent='submitHandler'>
+  <v-form @submit.prevent='signUpHandler'>
     <v-container>
       <v-text-field
         label='E-mail'
@@ -7,19 +7,20 @@
         :error='$v.email.$dirty && !$v.email.required || $v.email.$dirty && !$v.email.email'
       ></v-text-field>
       <v-text-field
-        label='Password'
+        label='Пароль'
         v-model='password'
         type='password'
         :error='$v.password.$dirty && !$v.password.required'
       ></v-text-field>
-      <v-checkbox v-model='checkbox' label='Запомнить меня'></v-checkbox>
-      <v-btn type='submit' color='success' class='my-2 mx-2'>Войти</v-btn>
-      <v-btn
-        type='submit'
-        color='warning'
-        class='my-2'
-        :to='{name: "Signup"}'
-      >Зарегистрироваться</v-btn>
+      <v-text-field
+        label='Повторите пароль'
+        type='password'
+        :error='$v.password.$dirty && !$v.password.required'
+      ></v-text-field>
+      <input type='checkbox' /> Согласен с
+      <a href>правилами</a>
+      <br />
+      <v-btn type='submit' color='success' class='my-2'>Зарегистрироваться</v-btn>
     </v-container>
   </v-form>
 </template>
@@ -43,22 +44,20 @@ export default {
       required,
     },
   },
-
   methods: {
-    async submitHandler() {
+    signUpHandler() {
       if (this.$v.$invalid) {
         this.$v.$touch()
         return
       }
-
-      try {
-        await firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        this.$router.push({
-          name: 'Home',
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          // Signed in
+          var user = userCredential.user
+          // ...
         })
-      } catch (e) {
-        console.log(e)
-      }
     },
   },
 }

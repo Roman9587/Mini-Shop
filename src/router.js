@@ -7,6 +7,7 @@ import Services from '@/view/Services'
 import Orders from '@/view/Orders'
 import Balance from '@/view/Balance'
 import Login from '@/view/Login'
+import Signup from '@/view/Signup'
 import E404 from '@/view/E404'
 
 Vue.use(Router)
@@ -42,6 +43,12 @@ const routes = [
   name: 'Login',
   path: '/login',
   component: Login,
+  meta: {layout: 'empty'}
+},
+{
+  name: 'Signup',
+  path: '/signup',
+  component: Signup,
   meta: {layout: 'empty'}
 },
 {
